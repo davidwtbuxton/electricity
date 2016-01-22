@@ -10,4 +10,5 @@ setup(
     author='David Buxton',
     author_email='david@gasmark6.com',
     packages=['electricity'],
+    install_requires=['PyYAML>=3.08'],
 )
