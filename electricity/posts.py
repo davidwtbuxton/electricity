@@ -2,12 +2,20 @@ import itertools
 
 import yaml
 
+from . import utils
+
 
 class Post(object):
+    def __init__(self, text=b'', frontmatter=None):
+        self.text = text
+        self.frontmatter = frontmatter or {}
+
     @classmethod
     def from_file(cls, filename):
-        with open(filename, 'rU') as fh:
+        with utils.open_filename(filename, 'rU') as fh:
             frontmatter, text = parse_file_contents(fh)
+
+        return cls(text=text, frontmatter=frontmatter)
 
 
 def parse_file_contents(lines):
