@@ -1,4 +1,5 @@
 /.tox/
 /dist/
+/.eggs/
 *.egg-info/
 *.py[cod]
